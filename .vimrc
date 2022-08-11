@@ -11,6 +11,8 @@ set number
 set laststatus=2
 set statusline=%t%=%c,%l/%L\ %P
 
+" When opening a file, position the cursor on the same line where it was
+" when the file was closed last time
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
